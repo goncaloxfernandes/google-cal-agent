@@ -34,9 +34,9 @@ def listen_to_command(mic: sr.Microphone, recognizer: sr.Recognizer):
 def execute_command(command):
     execute_query(command)
 
-load_dotenv()
 init_lc()
 
+load_dotenv('keys.env')
 PORCUPINE_ACCESS_KEY = os.environ.get('PORCUPINE_ACCESS_KEY')
 
 porcupine = pvporcupine.create(access_key=PORCUPINE_ACCESS_KEY, keywords=[WAKE_WORD])
